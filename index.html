@@ -2,128 +2,40 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Δήμητρα & Γιάννης</title>
-
 <style>
-
-body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#eef2ec;
-font-family:serif;
-overflow:hidden;
-}
-
-/* envelope */
-
-.envelope{
-position:relative;
-width:420px;
-height:300px;
-background:#9fb59d;
-border-radius:8px;
-cursor:pointer;
-perspective:1000px;
-}
-
-/* envelope top */
-
-.flap{
-position:absolute;
-width:100%;
-height:100%;
-background:#a7bea5;
-clip-path:polygon(0 0,100% 0,50% 55%);
-transform-origin:top;
-transition:1s;
-z-index:3;
-}
-
-/* seal */
-
-.seal{
-position:absolute;
-top:120px;
-left:50%;
-transform:translateX(-50%);
-width:80px;
-height:80px;
-border-radius:50%;
-background:#d4b26a;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:26px;
-color:white;
-font-weight:bold;
-z-index:5;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* invitation */
-
-.card{
-position:absolute;
-bottom:0;
-left:50%;
-transform:translateX(-50%) translateY(100%);
-width:380px;
-transition:1.3s;
-z-index:1;
-}
-
-.card img{
-width:100%;
-border-radius:6px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* open animation */
-
-.open .flap{
-transform:rotateX(-180deg);
-}
-
-.open .card{
-transform:translateX(-50%) translateY(-60px);
-}
-
-.open .seal{
-opacity:0;
-transition:0.5s;
-}
-
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;background:#eef2ec;font-family:serif;}
+.envelope{position:relative;width:420px;height:300px;background:#9fb59d;border-radius:8px;cursor:pointer;perspective:900px;box-shadow:0 20px 35px rgba(0,0,0,.25);}
+.flap{position:absolute;width:100%;height:100%;background:#a7bea5;clip-path:polygon(0 0,100% 0,50% 55%);transform-origin:top;transition:1s;z-index:3;}
+.seal{position:absolute;top:118px;left:50%;transform:translateX(-50%);width:74px;height:74px;border-radius:50%;background:#d4b26a;display:flex;justify-content:center;align-items:center;font-size:22px;color:white;font-weight:bold;z-index:5;box-shadow:0 4px 12px rgba(0,0,0,.25);}
+.card{position:absolute;bottom:0;left:50%;transform:translateX(-50%) translateY(100%);width:360px;transition:1.2s;z-index:1;}
+.invitation{background:linear-gradient(#ffffff,#f5f0e6);border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:28px;}
+.invitation .names{text-align:center;font-size:28px;font-weight:600;letter-spacing:1px;margin-bottom:8px;}
+.invitation .divider{width:70px;height:1px;background:#c9b28a;margin:10px auto 18px;}
+.invitation .line{text-align:center;margin:2px 0;font-size:15px;color:#6a6356;}
+.invitation .big{text-align:center;margin-top:18px;font-size:16px;color:#6a6356;}
+.open .flap{transform:rotateX(-180deg);}
+.open .card{transform:translateX(-50%) translateY(-70px);}
+.open .seal{opacity:0;transition:.6s;}
 </style>
 </head>
-
 <body>
-
 <div class="envelope" onclick="openEnvelope()">
-
-<div class="flap"></div>
-
-<div class="seal">
-Δ & Γ
+  <div class="flap"></div>
+  <div class="seal">Δ & Γ</div>
+  <div class="card">
+    <div class="invitation">
+      <div class="names">Δήμητρα & Γιάννης</div>
+      <div class="divider"></div>
+      <div class="line">Σας προσκαλούμε</div>
+      <div class="line">στην πιο όμορφη ημέρα μας</div>
+      <div class="big">[Δώσε ημερομηνία/ώρα/εκκλησία]</div>
+    </div>
+  </div>
 </div>
-
-<div class="card">
-<img src="invitation.png">
-</div>
-
-</div>
-
 <script>
-
-function openEnvelope(){
-document.querySelector(".envelope").classList.add("open");
-}
-
+function openEnvelope(){document.querySelector(".envelope").classList.add("open");}
 </script>
-
 </body>
 </html>
