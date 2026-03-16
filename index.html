@@ -6,17 +6,19 @@
 <title>Δήμητρα & Γιάννης</title>
 <style>
 body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;background:#eef2ec;font-family:serif;}
-.envelope{position:relative;width:420px;height:300px;background:#9fb59d;border-radius:8px;box-shadow:0 20px 35px rgba(0,0,0,.25);cursor:pointer;perspective:900px;}
-.flap{position:absolute;width:100%;height:100%;background:#a7bea5;clip-path:polygon(0 0,100% 0,50% 55%);transform-origin:top;transition:1s;z-index:3;}
-.seal{position:absolute;top:118px;left:50%;transform:translateX(-50%);width:74px;height:74px;border-radius:50%;background:#d4b26a;display:flex;justify-content:center;align-items:center;font-size:22px;color:white;font-weight:bold;z-index:5;box-shadow:0 4px 12px rgba(0,0,0,.25);}
-.card{position:absolute;left:50%;transform:translateX(-50%);bottom:-260px;width:360px;transition:1.2s ease;z-index:1;}
+
+.envelope{position:relative;width:420px;height:300px;background:#9fb59d;border-radius:8px;box-shadow:0 20px 35px rgba(0,0,0,.25);cursor:pointer;perspective:900px;overflow:visible;}
+.flap{position:absolute;width:100%;height:100%;background:#a7bea5;clip-path:polygon(0 0,100% 0,50% 55%);transform-origin:top;transition:1s;z-index:5;backface-visibility:hidden;}
+.seal{position:absolute;top:118px;left:50%;transform:translateX(-50%);width:74px;height:74px;border-radius:50%;background:#d4b26a;display:flex;justify-content:center;align-items:center;font-size:22px;color:white;font-weight:bold;z-index:6;box-shadow:0 4px 12px rgba(0,0,0,.25);backface-visibility:hidden;}
+.card{position:absolute;left:50%;transform:translateX(-50%);bottom:-260px;width:360px;transition:1.2s ease;z-index:2;}
 .invitation{background:linear-gradient(#fff,#f5f0e6);border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:28px;}
 .invitation .names{text-align:center;font-size:28px;font-weight:600;letter-spacing:1px;margin-bottom:8px;}
 .invitation .divider{width:70px;height:1px;background:#c9b28a;margin:10px auto 18px;}
 .invitation .line{text-align:center;margin:2px 0;font-size:15px;color:#6a6356;}
 .invitation .big{text-align:center;margin-top:18px;font-size:16px;color:#6a6356;}
-.open .flap{transform:rotateX(-180deg);}
-.open .card{bottom:30px;transition-delay:.55s;}
+
+.open .flap{transform:rotateX(-180deg);z-index:1;}
+.open .card{bottom:30px;transition-delay:.55s;z-index:4;}
 .open .seal{opacity:0;transition:.6s;}
 </style>
 </head>
